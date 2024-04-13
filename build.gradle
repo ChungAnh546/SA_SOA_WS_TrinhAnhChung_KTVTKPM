@@ -1,0 +1,37 @@
+plugins {
+    id 'java'
+    id 'war'
+}
+
+group 'vn.edu.iuh.fit'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+ext {
+    junitVersion = '5.9.2'
+}
+
+sourceCompatibility = '11'
+targetCompatibility = '11'
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
+
+dependencies {
+    compileOnly('jakarta.servlet:jakarta.servlet-api:5.0.0')
+    implementation 'jakarta.jws:jakarta.jws-api:3.0.0'
+//This dependency includes the JAX-WS Reference Implementation (RI) from Oracle.
+    implementation 'com.sun.xml.ws:jaxws-ri:4.0.2'
+//This dependency includes the JAX-WS runtime libraries.
+    implementation 'com.sun.xml.ws:jaxws-rt:4.0.2'
+    testImplementation("org.junit.jupiter:junit-jupiter-api:${junitVersion}")
+    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:${junitVersion}")
+}
+
+test {
+    useJUnitPlatform()
+}
