@@ -2,13 +2,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>JSP - Hello World</title>
+    <title>JSP - Calc</title>
 </head>
 <body>
-<h1><%= "Hello World!" %>
+<h1><%= "Calc Page!" %>
 </h1>
 <br/>
 <a href="hello-servlet">Hello Servlet</a>
-<a href="calculator.jsp">Calculator Servlet</a>
+<a href="calculator">Calculator Servlet</a>
 </body>
 </html>
